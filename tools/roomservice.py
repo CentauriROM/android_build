@@ -34,16 +34,16 @@ except ImportError:
 
 # Config
 # set this to the default remote to use in repo
-default_rem = "lsd"
+default_rem = "crd"
 # set this to the default revision to use (branch/tag name)
-default_rev = "kitkat"
+default_rev = "kk44"
 # set this to the remote that you use for projects from your team repos
 # example fetch="https://github.com/omnirom"
 default_team_rem = "gh"
 # this shouldn't change unless google makes changes
 local_manifest_dir = ".repo/local_manifests"
 # change this to your name on github (or equivalent hosting)
-android_team = "LiquidSmooth-Devices"
+android_team = "CentauriROM-Devices"
 
 
 def check_repo_exists(git_data):
@@ -200,13 +200,13 @@ def parse_device_from_folder(device):
     elif len(search) == 1:
         location = search[0]
     else:
-        print("Your device was not found. Attempting to retrieve device repository from LiquidSmooth Github..")
+        print("Your device was not found. Attempting to retrieve device repository from CentauriROM Github..")
         location = parse_device_from_manifest(device)
     return location
 
 
 def parse_dependency_file(location):
-    dep_file = "liquid.dependencies"
+    dep_file = "centauri.dependencies"
     dep_location = '/'.join([location, dep_file])
     if not os.path.isfile(dep_location):
         print("WARNING: %s file not found" % dep_location)

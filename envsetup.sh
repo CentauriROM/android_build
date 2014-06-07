@@ -64,13 +64,13 @@ function check_product()
         return
     fi
 
-    if (echo -n $1 | grep -q -e "^liquid_") ; then
-       LIQUID_BUILD=$(echo -n $1 | sed -e 's/^liquid_//g')
-       export BUILD_NUMBER=$((date +%s%N ; echo $LIQUID_BUILD; hostname) | openssl sha1 | sed -e 's/.*=//g; s/ //g' | cut -c1-10)
+    if (echo -n $1 | grep -q -e "^centauri_") ; then
+       CENTAURI_BUILD=$(echo -n $1 | sed -e 's/^centauri_//g')
+       export BUILD_NUMBER=$((date +%s%N ; echo $CENTAURI_BUILD; hostname) | openssl sha1 | sed -e 's/.*=//g; s/ //g' | cut -c1-10)
     else
-       LIQUID_BUILD=
+       CENTAURI_BUILD=
     fi
-    export LIQUID_BUILD
+    export CENTAURI_BUILD
 
     CALLED_FROM_SETUP=true BUILD_SYSTEM=build/core \
         TARGET_PRODUCT=$1 \
@@ -1434,7 +1434,7 @@ unset f
 
 # Add completions
 check_bash_version && {
-    dirs="sdk/bash_completion vendor/liquid/bash_completion"
+    dirs="sdk/bash_completion vendor/centauri/bash_completion"
     for dir in $dirs; do
     if [ -d ${dir} ]; then
         for f in `/bin/ls ${dir}/[a-z]*.bash 2> /dev/null`; do

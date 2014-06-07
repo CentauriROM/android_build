@@ -184,16 +184,16 @@ ifneq ($(strip $(TARGET_BUILD_APPS)),)
 all_product_configs := $(call get-product-makefiles,\
     $(SRC_TARGET_DIR)/product/AndroidProducts.mk)
 else
-  ifneq ($(LIQUID_BUILD),)
-    all_product_configs := $(shell ls device/*/$(LIQUID_BUILD)/liquid.mk)
+  ifneq ($(CENTAURI_BUILD),)
+    all_product_configs := $(shell ls device/*/$(CENTAURI_BUILD)/centauri.mk)
   else
     # Read in all of the product definitions specified by the AndroidProducts.mk
     # files in the tree.
     all_product_configs := $(get-all-product-makefiles)
-  endif # LIQUID_BUILD
+  endif # CENTAURI_BUILD
 endif
 
-ifeq ($(LIQUID_BUILD),)
+ifeq ($(CENTAURI_BUILD),)
 # Find the product config makefile for the current product.
 # all_product_configs consists items like:
 # <product_name>:<path_to_the_product_makefile>
