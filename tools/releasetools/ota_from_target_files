@@ -507,11 +507,12 @@ else if get_stage("%(bcb_dev)s", "stage") == "3/3" then
 
   if OPTIONS.wipe_user_data:
     script.FormatPartition("/data")
-	  	
-  script.Print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
-  script.Print("           <%%% CentauriROM %%%>              ")
-  script.Print("            <%%% By MTB3000GT %%%>            ")
-  script.Print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
+
+  script.Print("    ______           __                   _ ____  ____  __  ___  ")
+  script.Print("   / ____/__  ____  / /_____ ___  _______(_) __ \/ __ \/  |/  /  ")
+  script.Print("  / /   / _ \/ __ \/ __/ __ `/ / / / ___/ / /_/ / / / / /|_/ /   ")
+  script.Print(" / /___/  __/ / / / /_/ /_/ / /_/ / /  / / _, _/ /_/ / /  / /    ")
+  script.Print(" \____/\___/_/ /_/\__/\__,_/\__,_/_/  /_/_/ |_|\____/_/  /_/     ")
   script.Print("Erasing System...")
 
   if "selinux_fc" in OPTIONS.info_dict:
